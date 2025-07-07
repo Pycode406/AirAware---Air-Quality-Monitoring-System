@@ -83,12 +83,15 @@ def get_aqi_details(city):
         st.error("City not found.")
         return
     data=get_aqi_data(lat,lon)
-    if "list" not in data:
+    if "list" not in data or not data["list"]:
         st.error("AQI data unavailable.")
         return
     pollution_data=data['list'][0]
     aqi_openweather=pollution_data['main']['aqi']
     aqi=convert_openweather_aqi(aqi_openweather)
+
+    aqi_status = "Unknown"
+    aqi_message = "AQI category not found for this value."
 
     for max_aqi, category, message in AQI_CATEGORIES:
         if aqi<=max_aqi:
