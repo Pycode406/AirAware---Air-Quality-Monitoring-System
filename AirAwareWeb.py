@@ -90,9 +90,6 @@ def get_aqi_details(city):
     aqi_openweather=pollution_data['main']['aqi']
     aqi=convert_openweather_aqi(aqi_openweather)
 
-    aqi_status = "Unknown"
-    aqi_message = "AQI category not found for this value."
-
     for max_aqi, category, message in AQI_CATEGORIES:
         if aqi<=max_aqi:
             aqi_status=category
