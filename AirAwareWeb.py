@@ -90,6 +90,7 @@ def get_aqi_details(city):
     pollution_data=data['list'][0]
     aqi_openweather=pollution_data['main']['aqi']
     aqi=convert_openweather_aqi(aqi_openweather)
+    aqi = int(aqi) 
     aqi_status = AQI_CATEGORIES[1][1]
     aqi_message = AQI_CATEGORIES[1][2]
 
