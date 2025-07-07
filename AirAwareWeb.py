@@ -238,7 +238,7 @@ elif st.session_state.selected=='📈 Historical AQI (Past 3 Days)':
                     for e in entries
                 ])
                 daily_avg=df.groupby("date")["aqi"].mean().reset_index()
-                daily_avg.set_index("Date", inplace=True)
+                daily_avg.set_index("date", inplace=True)
                 st.line_chart(daily_avg.rename(columns={"aqi": "Past AQI"}))
             else:
                 st.warning("No historical data available.")
