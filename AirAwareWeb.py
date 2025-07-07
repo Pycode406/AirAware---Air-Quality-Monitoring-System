@@ -71,7 +71,6 @@ def convert_openweather_aqi(aqi_value):
 def get_lat_lon(city):
     url=f"http://api.openweathermap.org/geo/1.0/direct?q={city}&limit=1&appid={API_KEY}"
     response = requests.get(url).json()
-    st.write("Geo API Response:", response)
     if response:
         return response[0]['lat'], response[0]['lon']
     return None, None
