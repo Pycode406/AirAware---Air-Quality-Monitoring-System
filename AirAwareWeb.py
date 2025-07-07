@@ -10,13 +10,14 @@ API_KEY="8b8b77d1046f7ee6662731a0daa9483c"
 
 AQI_CATEGORIES = [
     (50, "Good", "Air quality is satisfactory, and air pollution poses little or no risk."),
-    (100, "Moderate","Air quality is acceptable, but some pollutants may be a concern for sensitive groups."),
-    (150, "Unhealthy for sensitive groups", "Children, elderly, and people with respiratory issues should limit outdoor activities."),
+    (100, "Moderate", "Air quality is acceptable, but some pollutants may be a concern for sensitive groups."),
+    (150, "Unhealthy for Sensitive Groups", "Children, elderly, and people with respiratory issues should limit outdoor activities."),
     (200, "Unhealthy", "Everyone may begin to experience adverse health effects; sensitive groups should stay indoors."),
     (300, "Very Unhealthy", "Health alert: everyone may experience more serious health effects."),
     (500, "Hazardous", "Emergency conditions. Entire population is more likely to be affected."),
     (1000, "Severely Hazardous", "AQI is extremely high. Stay indoors. Emergency response may be needed.")
 ]
+
 
 POLLUTANT_PRECAUTIONS = {
     'pm2_5': """1. Wear an N95 mask outdoors.
@@ -91,14 +92,17 @@ def get_aqi_details(city):
     aqi_openweather=pollution_data['main']['aqi']
     aqi=convert_openweather_aqi(aqi_openweather)
     aqi = int(aqi) 
-    aqi_status = AQI_CATEGORIES[1][1]
-    aqi_message = AQI_CATEGORIES[1][2]
+    
 
     for max_aqi, category, message in AQI_CATEGORIES:
         if aqi<=max_aqi:
             aqi_status=category
             aqi_message=message
             break
+        else:
+            aqi_status = AQI_CATEGORIES[1][1]
+            aqi_message = AQI_CATEGORIES[1][2]
+
         pollutants=['pm2_5', 'pm10', 'no2', 'so2', 'co', 'o3']
         values=[pollution_data['components'].get(p,0) for p in pollutants]
         co_index=pollutants.index('co')
