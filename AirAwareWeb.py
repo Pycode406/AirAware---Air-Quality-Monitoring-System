@@ -14,7 +14,8 @@ AQI_CATEGORIES = [
     (150, "Unhealthy for sensitive groups", "Children, elderly, and people with respiratory issues should limit outdoor activities."),
     (200, "Unhealthy", "Everyone may begin to experience adverse health effects; sensitive groups should stay indoors."),
     (300, "Very Unhealthy", "Health alert: everyone may experience more serious health effects."),
-    (500, "Hazardous", "Emergency conditions. Entire population is more likely to be affected.")
+    (500, "Hazardous", "Emergency conditions. Entire population is more likely to be affected."),
+    (1000, "Severely Hazardous", "AQI is extremely high. Stay indoors. Emergency response may be needed.")
 ]
 
 POLLUTANT_PRECAUTIONS = {
