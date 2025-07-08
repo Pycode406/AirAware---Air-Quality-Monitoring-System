@@ -175,13 +175,13 @@ st.markdown(
     [data-testid="stMetricValue"] {
     font-weight: 1000 !important;
     font-size: 28px !important;
-    color: #000000 !important;
+    color: #ffffff !important;
     }
 
     [data-testid="stMetricLabel"] {
-    font-weight: 900 !important;
+    font-weight: 1000 !important;
     font-size: 20px !important;
-    color: #000000 !important;
+    color: #ffffff !important;
     }
 
     .stAlert-success p {
