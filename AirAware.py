@@ -212,7 +212,13 @@ if st.session_state.selected == '📍 Check AQI of City':
 
 elif st.session_state.selected == '🌤️ Today\'s Weather Report':
     st.subheader("🌤️ Today's Weather Report")
-    city = st.text_input("Enter your city for weather:")
+    st.markdown("""
+    <div style='font-size:18px; font-weight:1000; color:#000000 !important; margin-bottom:5px;'>
+    🌤️ Enter your city for weather:
+    </div>
+    """, unsafe_allow_html=True)
+    city = st.text_input("")
+
     if city:
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
         response = requests.get(url).json()
@@ -231,8 +237,14 @@ elif st.session_state.selected == '🌤️ Today\'s Weather Report':
             st.success(f"Condition: {desc}")
 
 elif st.session_state.selected == '📊 Air Quality Forecast':
-    st.subheader("📊 Air Quality Forecast - Next 3 Days")
-    city = st.text_input("Enter your city for AQI Forecast:")
+    st.subheader("📊 Air Quality Forecast")
+    st.markdown("""
+    <div style='font-size:18px; font-weight:1000; color:#000000 !important; margin-bottom:5px;'>
+    📊 Enter your city for AQI Forecast:
+    </div>
+    """, unsafe_allow_html=True)
+    city = st.text_input("")
+
     if city:
         lat, lon = get_lat_lon(city)
         if lat and lon:
@@ -255,7 +267,13 @@ elif st.session_state.selected == '📊 Air Quality Forecast':
 
 elif st.session_state.selected == '📈 Historical AQI (Past 3 Days)':
     st.subheader("📈 Historical AQI - Past 3 Days")
-    city = st.text_input("Enter your city for historical AQI:")
+    st.markdown("""
+    <div style='font-size:18px; font-weight:1000; color:#000000 !important; margin-bottom:5px;'>
+    📈 Enter your city for historical AQI:
+    </div>
+    """, unsafe_allow_html=True)
+    city = st.text_input("")
+
     if city:
         lat, lon = get_lat_lon(city)
         if lat and lon:
