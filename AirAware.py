@@ -172,17 +172,25 @@ st.markdown(
     .element-container:has(.stMetric) {
         padding: 10px 0;
     }
-    [data-testid="stMetricLabel"] {
-    font-weight: 1000 !important;   /* Maximum boldness */
-    font-size: 22px !important;     /* Slightly larger */
-    color: inherit !important;      /* Do not force color */
+    
+    div[data-testid="stMetric"] > label {
+    font-weight: 1000 !important;
+    font-size: 20px !important;
+    color: inherit !important;
+    }
+    
+    div[data-testid="stMetric"] > div {
+    font-weight: 1000 !important;
+    font-size: 28px !important;
+    color: inherit !important;
+    }
+    
+    div[data-testid="stAlertSuccess"] p {
+    font-weight: 1000 !important;
+    font-size: 20px !important;
+    color: inherit !important;
     }
 
-    div[data-testid="stAlertSuccess"] p {
-    font-weight: 1000 !important;   /* Extra bold */
-    font-size: 20px !important;     /* Slightly larger */
-    color: inherit !important;      /* Keep original green tone */
-    }
 
     </style>
     """,
@@ -190,7 +198,7 @@ st.markdown(
 )
 
 
-st.markdown("<div class='title-block'>🌫🌍️ AIRAWARE - Air Quality Monitoring System   🌫🌍</div>", unsafe_allow_html=True)
+st.markdown("<div class='title-block'>🛰️🌱🌍️ AIRAWARE - Air Quality Monitoring System   🌍🌱🛰️</div>", unsafe_allow_html=True)
 
 # === Sidebar navigation ===
 if 'selected' not in st.session_state:
