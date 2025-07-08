@@ -145,6 +145,20 @@ st.markdown(
         padding: 20px;
         color: #000000;  /* Pure black for visibility */
     }
+    h1, h2, h3, h4, h5, h6, .markdown-text-container {
+        font-weight: 800 !important;
+    }
+    .stMarkdown p {
+        font-weight: 700 !important;
+        font-size: 18px !important;
+    }
+    .stMetric label, .stMetric div {
+        font-weight: 900 !important;
+        font-size: 18px !important;
+    }
+    .element-container:has(.stMetric) {
+        padding: 10px 0;
+    }
     </style>
     """,
     unsafe_allow_html=True
