@@ -107,16 +107,16 @@ def get_aqi_details(city):
     precaution = POLLUTANT_PRECAUTIONS.get(max_pollutant, "Follow general air quality precautions.")
 
     st.markdown(f"### AQI for {city}: {aqi} ({aqi_status})")
-    st.markdown(f"""<div style="background-color:rgba(208, 235, 255, 0.20); padding:15px; border-left:6px solid #228be6; border-radius:6px;">
+    st.markdown(f"""<div style="background-color:rgba(208, 235, 255, 0.35); padding:15px; border-left:6px solid #228be6; border-radius:6px;">
     <p style="font-weight:700; font-size:17px; color:#000000;">{aqi_message}</p>
     </div>""", unsafe_allow_html=True)
 
     st.markdown(f"### ⚠️ Main Pollutant: `{max_pollutant.upper()}`")
     st.markdown(f"""
-    <div style="background-color:rgba(253, 243, 209, 0.20); padding:15px; border-radius:10px;">
+    <div style="background-color:rgba(253, 243, 209, 0.35); padding:15px; border-radius:10px;">
     <p style="font-weight:900 !important; font-size:18px !important; color:#000000 !important; margin-bottom:10px;">⚠️ Precautions:</p>
     <ol style="font-weight:700; font-size:17px; color:#000000;">
-    {''.join([f"<li>{line}</li>" for line in precaution.split('\\n')])}
+    {''.join([f"<li>{line.strip()}</li>" for line in precaution.split('\\n')])}
     </ol>
     </div>
     """, unsafe_allow_html=True)
