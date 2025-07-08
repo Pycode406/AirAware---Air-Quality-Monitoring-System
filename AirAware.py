@@ -200,7 +200,7 @@ with col2:
 
 if st.session_state.selected == '📍 Check AQI of City':
     st.subheader("📍 Check AQI of City")
-    city = st.text_input("Enter your city name:")
+    city = st.text_input("### "**Enter your city name:**")
     if city:
         get_aqi_details(city)
 
