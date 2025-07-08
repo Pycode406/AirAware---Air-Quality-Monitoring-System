@@ -18,48 +18,48 @@ AQI_CATEGORIES = [
 ]
 
 POLLUTANT_PRECAUTIONS = {
-    'pm2_5': """1. Wear an N95 mask outdoors.
-2. Use HEPA air purifiers indoors.
-3. Keep windows and doors closed.
-4. Avoid outdoor exercise.
-5. Monitor AQI apps frequently.
-6. Seal gaps in windows to prevent air entry.
-7. Keep plants indoors to absorb particulates.""",
-    'pm10': """1. Limit time outdoors.
-2. Keep house clean from dust.
-3. Avoid construction zones.
-4. Use wet mopping instead of sweeping.
-5. Avoid outdoor burning.
-6. Wear dust masks.
-7. Ventilate only when air is clean.""",
-    'no2': """1. Avoid high-traffic areas.
-2. Do not burn firewood indoors.
-3. Use electric stoves instead of gas.
-4. Install air purifiers with activated carbon.
-5. Ventilate kitchen and bathrooms properly.
-6. Avoid smoking indoors.
-7. Use public transport to reduce emissions.""",
-    'so2': """1. Stay indoors during high levels.
-2. Avoid burning coal or firewood.
-3. Use cleaner cooking methods.
-4. Ventilate your home well.
-5. Install gas leak detectors.
-6. Prefer electric heating.
-7. Avoid industrial zones.""",
-    'co': """1. Do not leave vehicles running in enclosed spaces.
-2. Install CO detectors at home.
-3. Ensure proper chimney ventilation.
-4. Service gas appliances regularly.
-5. Avoid smoking indoors.
-6. Do not use charcoal grills indoors.
-7. Keep room ventilated while using heaters.""",
-    'o3': """1. Avoid exercise during midday.
-2. Limit car usage.
-3. Close windows on hot, sunny days.
-4. Use indoor plants like aloe vera.
-5. Stay indoors on ozone alert days.
-6. Avoid gasoline-powered equipment.
-7. Use public transit instead of driving."""
+    'pm2_5': """Wear an N95 mask outdoors.
+Use HEPA air purifiers indoors.
+Keep windows and doors closed.
+Avoid outdoor exercise.
+Monitor AQI apps frequently.
+Seal gaps in windows to prevent air entry.
+Keep plants indoors to absorb particulates.""",
+    'pm10': """Limit time outdoors.
+Keep house clean from dust.
+Avoid construction zones.
+Use wet mopping instead of sweeping.
+Avoid outdoor burning.
+Wear dust masks.
+Ventilate only when air is clean.""",
+    'no2': """Avoid high-traffic areas.
+Do not burn firewood indoors.
+Use electric stoves instead of gas.
+Install air purifiers with activated carbon.
+Ventilate kitchen and bathrooms properly.
+Avoid smoking indoors.
+Use public transport to reduce emissions.""",
+    'so2': """Stay indoors during high levels.
+Avoid burning coal or firewood.
+Use cleaner cooking methods.
+Ventilate your home well.
+Install gas leak detectors.
+Prefer electric heating.
+Avoid industrial zones.""",
+    'co': """Do not leave vehicles running in enclosed spaces.
+Install CO detectors at home.
+Ensure proper chimney ventilation.
+Service gas appliances regularly.
+Avoid smoking indoors.
+Do not use charcoal grills indoors.
+Keep room ventilated while using heaters.""",
+    'o3': """Avoid exercise during midday.
+Limit car usage.
+Close windows on hot, sunny days.
+Use indoor plants like aloe vera.
+Stay indoors on ozone alert days.
+Avoid gasoline-powered equipment.
+Use public transit instead of driving."""
 }
 
 def convert_openweather_aqi(aqi_value):
@@ -113,7 +113,8 @@ def get_aqi_details(city):
 
     st.markdown(f"### ⚠️ Main Pollutant: `{max_pollutant.upper()}`")
     st.markdown(f"""<div style="background-color:rgba(253, 243, 209, 0.50); padding:15px; border-radius:10px;">
-    <b>Precautions:</b><br><ol style="font-weight:700; font-size:17px; color:#000000;">""" +
+    <p style="font-weight:900; font-size:18px; color:#000000;">Precautions:</p>
+    <br><ol style="font-weight:700; font-size:17px; color:#000000;">""" +
     ''.join([f"<li>{line}</li>" for line in precaution.split('\n')]) +
     "</ol></div>", unsafe_allow_html=True)
 
