@@ -200,7 +200,13 @@ with col2:
 
 if st.session_state.selected == '📍 Check AQI of City':
     st.subheader("📍 Check AQI of City")
-    city = st.text_input("**Enter your city name:**")
+    st.markdown("""
+    <div style='font-size:18px; font-weight:1000; color:#000000 !important; margin-bottom:5px;'>
+    🔍 Enter your city name:
+    </div>
+    """, unsafe_allow_html=True)
+    city = st.text_input("")
+
     if city:
         get_aqi_details(city)
 
