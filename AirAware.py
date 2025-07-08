@@ -172,24 +172,29 @@ st.markdown(
     .element-container:has(.stMetric) {
         padding: 10px 0;
     }
-    
-    div[data-testid="stMetric"] > label {
+    <style>
+
+    div[data-testid="stMetric"] div:nth-child(1) {
     font-weight: 1000 !important;
-    font-size: 20px !important;
+    font-size: 22px !important;
     color: inherit !important;
     }
-    
-    div[data-testid="stMetric"] > div {
+
+
+    div[data-testid="stMetric"] div:nth-child(2) {
     font-weight: 1000 !important;
-    font-size: 28px !important;
+    font-size: 30px !important;
     color: inherit !important;
     }
-    
+
+
     div[data-testid="stAlertSuccess"] p {
     font-weight: 1000 !important;
     font-size: 20px !important;
     color: inherit !important;
     }
+</style>
+
 
 
     </style>
