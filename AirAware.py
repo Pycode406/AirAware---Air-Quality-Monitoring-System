@@ -107,9 +107,16 @@ def get_aqi_details(city):
     precaution = POLLUTANT_PRECAUTIONS.get(max_pollutant, "Follow general air quality precautions.")
 
     st.markdown(f"### AQI for {city}: {aqi} ({aqi_status})")
-    st.info(aqi_message)
+    st.markdown(f"""<div style="background-color:#d0ebff; padding:15px; border-left:6px solid #228be6; border-radius:6px;">
+    <p style="font-weight:700; font-size:17px; color:#000000;">{aqi_message}</p>
+    </div>""", unsafe_allow_html=True)
+
     st.markdown(f"### ⚠️ Main Pollutant: `{max_pollutant.upper()}`")
-    st.warning(f"Precautions:\n{precaution}")
+    st.markdown(f"""<div style="background-color:#fdf3d1; padding:15px; border-radius:10px;">
+    <b>Precautions:</b><br><ol style="font-weight:700; font-size:17px; color:#000000;">""" +
+    ''.join([f"<li>{line}</li>" for line in precaution.split('\n')]) +
+    "</ol></div>", unsafe_allow_html=True)
+
 
     fig, ax = plt.subplots()
     colors = ['blue', 'green', 'red', 'purple', 'orange', 'brown']
