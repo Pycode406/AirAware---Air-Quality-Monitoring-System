@@ -172,6 +172,18 @@ st.markdown(
     .element-container:has(.stMetric) {
         padding: 10px 0;
     }
+    [data-testid="stMetricLabel"] {
+    font-weight: 1000 !important;   /* Maximum boldness */
+    font-size: 22px !important;     /* Slightly larger */
+    color: inherit !important;      /* Do not force color */
+    }
+
+    div[data-testid="stAlertSuccess"] p {
+    font-weight: 1000 !important;   /* Extra bold */
+    font-size: 20px !important;     /* Slightly larger */
+    color: inherit !important;      /* Keep original green tone */
+    }
+
     </style>
     """,
     unsafe_allow_html=True
