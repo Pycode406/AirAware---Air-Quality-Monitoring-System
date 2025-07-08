@@ -194,6 +194,7 @@ st.markdown(
     text-align: center;
     }
 
+
     </style>
     """,
     unsafe_allow_html=True
