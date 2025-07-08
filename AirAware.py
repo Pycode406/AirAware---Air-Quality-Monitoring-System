@@ -116,10 +116,11 @@ def get_aqi_details(city):
     <div style="background-color:rgba(253, 243, 209, 0.35); padding:15px; border-radius:10px;">
     <p style="font-weight:900 !important; font-size:18px !important; color:#000000 !important; margin-bottom:10px;">⚠️ Precautions:</p>
     <ol style="font-weight:700; font-size:17px; color:#000000;">
-    {''.join([f"<li>{line.strip()}</li>" for line in precaution.split('\\n')])}
+    {''.join(f"<li>{line.strip()}</li>" for line in precaution.strip().splitlines())}
     </ol>
     </div>
     """, unsafe_allow_html=True)
+
 
 
 
