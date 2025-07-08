@@ -172,6 +172,28 @@ st.markdown(
     .element-container:has(.stMetric) {
         padding: 10px 0;
     }
+    [data-testid="stMetricValue"] {
+    font-weight: 1000 !important;
+    font-size: 28px !important;
+    color: #000000 !important;
+    }
+
+    [data-testid="stMetricLabel"] {
+    font-weight: 900 !important;
+    font-size: 20px !important;
+    color: #000000 !important;
+    }
+
+    .stAlert-success p {
+    font-weight: 1000 !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+    background-color: #228B22 !important;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    }
+
     </style>
     """,
     unsafe_allow_html=True
