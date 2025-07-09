@@ -193,7 +193,7 @@ st.markdown(
     font-size: 20px !important;
     color: inherit !important;
     }
-</style>
+
 
 
 
